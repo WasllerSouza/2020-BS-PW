@@ -1,0 +1,29 @@
+<mat-sidenav-container  id="container" fullscreen >
+    <mat-sidenav class ="sidenav" mode="side" opened
+    fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/">
+                <i class = "material-icons">
+                    home
+                </i>
+                Home
+            </a>
+            <a mat-list-item routerLink="/paciente">
+                <i class = material-icons appRed>
+                    medical_services
+                </i>
+                Pacientes
+            </a>
+            <a mat-list-item (click)="logout()" >
+                <i class = material-icons appRed>
+                    exit_to_app
+                </i>
+               Exit
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="centerme">
+    <mat-card class="alert-dark mat-elevation-z18">
+      <form class="example-form " (ngSubmit)="onSubmit()" #form="ngForm" aria-labelledby="title">
+        <h1 id="title" class=" m-5" style="text-transform: uppercase; text-align: center"><img src="assets/img/goHorse.png" height="110">       Login</h1>
+        <div class="form-control-group">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput
+                   type="email"
+                   [errorStateMatcher]="matcher"
+                   [(ngModel)]="login.email"
+                   #email="ngModel"
+                   name="email"
+                   id="input-email"
+                   pattern=".+@.+\..+"
+                   placeholder="Email address"
+                   autofocus
+                   [required]="true"
+                   [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-control-group">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput
+                   type="password"
+                   [errorStateMatcher]="matcher"
+                   [(ngModel)]="login.password"
+                   #pass="ngModel"
+                   name="password"
+                   id="input-password"
+                   placeholder="Password"
+                   [required]="true"
+                   [attr.aria-invalid]="pass.invalid && pass.touched ? true : null">
+            <mat-error *ngIf="emailFormControl.hasError('password') && !emailFormControl.hasError('required')">
+              Please enter a valid password address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="warn" [disabled]="loading">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Sign In
+        </button>
+      </form>
+    </mat-card>
+  </div>
+</div>

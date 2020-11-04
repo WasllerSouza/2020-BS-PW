@@ -1,0 +1,75 @@
+<mat-card>
+    <mat-card-title>
+        Confirmar Exclusão
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+             [value]="paciente.firstName" name="Nome" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="sobrenome"
+             [value]="paciente.lastName" name="sobrenome" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome Da Mãe"
+            [value]="paciente.motherName" name="NomeDaMae" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Genero"
+            [value]="paciente.genre" name="Genero" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data de Nascimento (dd/MM/yy)"
+            [value]="paciente.birthDate" name="Nascimento" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="RG"
+            [value]="paciente.rg" name="RG" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CPF"
+            [value]="paciente.cpf" name="CPF" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Logradouro"
+            [value]="paciente.publicPlace" name="Logradouro" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Complemento"
+            [value]="paciente.complement" name="Complemento" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Bairro"
+            [value]="paciente.district" name="Bairro" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Cidade"
+            [value]="paciente.city" name="Cidade" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Estado"
+            [value]="paciente.state" name="Estado" disabled>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="deletePaciente()" color = "warn">
+        Excluir
+    </button>
+    <button mat-raised-button (click)="cancel()" >
+        Cancelar
+    </button>
+</mat-card>
+
+

@@ -1,0 +1,144 @@
+table {
+  width: 100%;
+
+}
+
+.mat-column-nome, .mat-column-complemento, .mat-column-estado, .mat-column-cidade {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 4% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-sobrenome {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 9% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-nomeDaMae {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 9% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-rg, .mat-column-cpf {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-logradouro,  .mat-column-bairro {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 11% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-genero, .mat-column-nascimento  {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 7% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+
+.delete > i {
+  color: #e35e6b
+}
+
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+
+    @each $colName, $props in $columns {
+
+      $width: map-get($props,
+        'width');
+
+      &#{$colName} {
+        flex: $width;
+        min-width: $width;
+
+        @if map-has-key($props, 'color') {
+          color: map-get($props, 'color');
+        }
+      }
+    }
+  }
+}
+
+@include mat-table-columns((
+  orderid: (width: 6rem, color: gray), date: (width: 9rem), items: (width: 20rem)
+));
+
+.mat-column-orderid[_ngcontent-c15] {
+  flex: 6rem;
+  min-width: 6rem;
+  color: gray;
+}
+
+.mat-column-date[_ngcontent-c15] {
+  flex: 9rem;
+  min-width: 9rem;
+}

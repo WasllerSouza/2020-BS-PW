@@ -1,0 +1,96 @@
+<mat-card>
+    <mat-card-title>
+        Alterar Paciente
+    </mat-card-title>
+    <form *ngIf="paciente">
+      <mat-form-field *ngIf="paciente">
+          <input matInput placeholder="Nome"
+                 [value]="paciente.firstName" name="Nome" [(ngModel)]="paciente.firstName">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="sobrenome"
+                 [value]="paciente.lastName" name="sobrenome" [(ngModel)]="paciente.lastName" >
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Nome Da Mãe"
+                 [value]="paciente.motherName" name="Nome Da Mãe"  [(ngModel)]="paciente.motherName">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Genero"
+                 [value]="paciente.genre" name="Genero" [(ngModel)]="paciente.genre" >
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Data de Nascimento (dd/MM/yy)"
+                 [value]="paciente.birthDate" name="Data de Nascimento (dd/MM/yy)" [(ngModel)]="paciente.birthDate" >
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="RG"
+                 [value]="paciente.RG" name="RG" [(ngModel)]="paciente.RG">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="CPF"
+                 [value]="paciente.CPF" name="CPF" [(ngModel)]="paciente.CPF">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Logradouro"
+                 [value]="paciente.publicPlace" name="Logradouro" [(ngModel)]="paciente.publicPlace">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Complemento"
+                 [value]="paciente.complement" name="Complemento" [(ngModel)]="paciente.complement">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Bairro"
+                 [value]="paciente.district" name="Bairro" [(ngModel)]="paciente.district">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Cidade"
+                 [value]="paciente.city" name="Cidade" [(ngModel)]="paciente.city">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="paciente">
+        <label>
+          <input matInput placeholder="Estado"
+                 [value]="paciente.state" name="Estado" [(ngModel)]="paciente.state">
+        </label>
+      </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="updatePaciente()" color = "primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()" >
+        Cancelar
+    </button>
+</mat-card>
+
